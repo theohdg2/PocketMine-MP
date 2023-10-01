@@ -206,7 +206,7 @@ class LevelDB extends BaseWorldProvider implements WritableWorldProvider{
 			try{
 				$palette[] = $this->blockStateDeserializer->deserialize($blockStateData);
 			}catch(BlockStateDeserializeException $e){
-				$logger->error("Failed to deserialize blockstate: " . $e->getMessage() . " offset $i in palette, blockstate NBT: " . $blockStateNbt->toString());
+				//$logger->error("Failed to deserialize blockstate: " . $e->getMessage() . " offset $i in palette, blockstate NBT: " . $blockStateNbt->toString());
 				$palette[] = $this->blockStateDeserializer->deserialize(GlobalBlockStateHandlers::getUnknownBlockStateData());
 			}
 		}
